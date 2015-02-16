@@ -1,7 +1,7 @@
 {
   "name": "express-controllers",
   "description": "Dead simple MVC routing for express",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Nicholas Penree <nick@penree.com>",
   "repository": {
     "type": "git",
