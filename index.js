@@ -32,7 +32,7 @@ express.application.controllers = function(app) {
   var defaultPath =  path.resolve(join(process.cwd(), 'controllers'));
   var controllerPath = self.get('controllers path') || defaultPath;
   var onController = function(name) {
-    if (name.match(/^.*.js$/ig)) {
+    if (name.match(/^.*\.js$/ig)) {
       var controller = name.replace(extname(name), '');
       if (typeof self.resource !== 'undefined') {
         self.resource(controller, require(join(controllerPath, controller)));
