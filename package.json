@@ -1,19 +1,28 @@
-{   "name": "express-controllers"
-  , "description": "Dead simple MVC routing for express"
-  , "version": "1.0.0"
-  , "author": "Nicholas Penree <nick@penree.com>"
-  , "repository" : {
-    "type": "git"
-  , "url": "git://github.com/drudge/express-controllers.git"
+{
+  "name": "express-controllers",
+  "description": "Dead simple MVC routing for express",
+  "version": "1.0.0",
+  "author": "Nicholas Penree <nick@penree.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/drudge/express-controllers.git"
+  },
+  "contributors": [],
+  "dependencies": {
+    "express-resource": "git://github.com/basicsharp/express-resource"
+  },
+  "devDependencies": {
+    "express": "4.x.x"
+  },
+  "keywords": [
+    "express",
+    "rest",
+    "resource",
+    "mvc",
+    "controller"
+  ],
+  "main": "index",
+  "engines": {
+    "node": ">= 0.8.0"
   }
-  , "contributors": []
-  , "dependencies": {
-      "express-resource": "~1.0.0"
-  }
-  , "devDependencies": {
-     "express": "4.x.x"
-  }
-  , "keywords": ["express", "rest", "resource", "mvc", "controller"]
-  , "main": "index"
-  , "engines": { "node": ">= 0.8.0" }
 }
