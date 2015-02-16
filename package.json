@@ -9,7 +9,8 @@
   },
   "contributors": [],
   "dependencies": {
-    "express-resource": "git://github.com/basicsharp/express-resource"
+    "express-resource": "git://github.com/basicsharp/express-resource",
+    "wrench": "^1.5.8"
   },
   "devDependencies": {
     "express": "4.x.x"

@@ -11,7 +11,8 @@
 
 var express = require('express');
 var resource = require('express-resource'); // Monkey patch express
-var readdir = require('fs').readdirSync;
+// var readdir = require('fs').readdirSync;
+var wrench = require('wrench');
 var path = require('path');
 var join = path.join;
 var extname = require('path').extname;
@@ -32,6 +33,7 @@ express.application.controllers = function(app) {
   var defaultPath =  path.resolve(join(process.cwd(), 'controllers'));
   var controllerPath = self.get('controllers path') || defaultPath;
   var onController = function(name) {
+    console.log(name);
     if (name.match(/^.*\.js$/ig)) {
       var controller = name.replace(extname(name), '');
       if (typeof self.resource !== 'undefined') {
@@ -39,6 +41,6 @@ express.application.controllers = function(app) {
       }
     }
   };
-  readdir(controllerPath).forEach(onController);
+  wrench.readdirSyncRecursive(controllerPath).forEach(onController);
   return self;
 };
