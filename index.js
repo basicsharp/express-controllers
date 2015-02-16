@@ -15,7 +15,6 @@ var resource = require('express-resource'); // Monkey patch express
 var wrench = require('wrench');
 var path = require('path');
 var join = path.join;
-var extname = require('path').extname;
 
 /**
  * Define resources for all controllers defined in your `controllers` directory
@@ -32,12 +31,15 @@ express.application.controllers = function(app) {
   var self = app || this;
   var defaultPath =  path.resolve(join(process.cwd(), 'controllers'));
   var controllerPath = self.get('controllers path') || defaultPath;
+  var topLevelName = self.get('top level controller') || null;
   var onController = function(name) {
-    console.log(name);
     if (name.match(/^.*\.js$/ig)) {
-      var controller = name.replace(extname(name), '');
+      var controller = name.replace(path.extname(name), '');
       if (typeof self.resource !== 'undefined') {
-        self.resource(controller, require(join(controllerPath, controller)));
+        if (controller == topLevelName)
+          self.resource(require(join(controllerPath, controller)));
+        else
+          self.resource(controller, require(join(controllerPath, controller)));
       }
     }
   };

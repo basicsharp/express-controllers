@@ -65,6 +65,15 @@ exports.destroy = function(req, res) {
 };
 ```
 
+### Top Level Controller
+Top level controller can be specified as in the following example:
+
+```js
+var app = express();
+app.set('top level controller', 'v2/home');  -> "GET /" will be routed to the "index" method of v2/home controller
+app = app.controllers();
+```
+
 ### Default Action Mapping
 
 Actions are then mapped as follows (by default), providing `req.params.forum` which contains the substring where ":forum" is shown below:

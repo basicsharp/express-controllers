@@ -4,7 +4,9 @@
 var express = require('express')
 var controllers = require('../../'); // Monkey patch express
 
-var app = express().controllers();
+var app = express();
+app.set('top level controller', 'v2/home');
+app = app.controllers();
 
 if (!require.parent) {
   var server = app.listen(3000, function() {
