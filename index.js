@@ -33,7 +33,7 @@ express.application.controllers = function(app) {
   var controllerPath = self.get('controllers path') || defaultPath;
   var topLevelName = self.get('top level controller') || null;
   var onController = function(name) {
-    if (name.match(/^.*\.js$/ig)) {
+    if (name.match(/^.*\.(coffee|js)$/ig)) {
       var controller = name.replace(path.extname(name), '');
       if (typeof self.resource !== 'undefined') {
         if (controller == topLevelName)
